@@ -43,14 +43,14 @@ import Buttons from "./Buttons";
 
 class App extends Component {
   state = {
-    Countries: [],
+    Cloths: [],
     current: []
   };
 
   componentDidMount() {
     fetch("/data.json")
       .then(res => res.json())
-      .then(Countries => this.setState({ Countries }));
+      .then(Cloths => this.setState({ Cloths }));
   }
   handleDown = e => {
     e.preventDefault();
@@ -65,7 +65,7 @@ class App extends Component {
     });
   };
   render() {
-    const { Countries, current } = this.state;
+    const { Cloths, current } = this.state;
 
     return (
       <Router>
@@ -79,16 +79,16 @@ class App extends Component {
             <div className="row">
               {/* <div className="col-12">
                 <pre className="border rounded bg-light p-3 mt-3">
-                  {JSON.stringify(this.state.Countries, null, 2)}
+                  {JSON.stringify(this.state.Cloths, null, 2)}
                 </pre>
               </div> */}
               <div className="col-6">
                 <Route
-                  path={["/:CountryID", "/"]}
+                  path={["/:ClothID", "/"]}
                   render={({ match }) => (
                     <LeftSideBar
                       match={match}
-                      Countries={Countries}
+                      Cloths={Cloths}
                       current={current}
                     />
                   )}
@@ -106,14 +106,13 @@ class App extends Component {
                   <h1>Welcome to BuyCloth.com</h1>
                   <p>Click on the Left Items to see more details</p>
                 </Route>
-                {this.state.Countries.length > 0 && (
+                {this.state.Cloths.length > 0 && (
                   <Route
-                    path="/:CountryID"
+                    path="/:ClothID"
                     render={({ match }) => (
-                      <Country
-                        country={this.state.Countries.find(
-                          country =>
-                            country.CountryCode === match.params.CountryID
+                      <Cloth
+                        cloth={this.state.Cloths.find(
+                          cloth => cloth.ClothCost === match.params.ClothID
                         )}
                       />
                     )}
@@ -130,32 +129,32 @@ class App extends Component {
 
 export default App;
 
-const Country = ({ country }) => {
-  const { Country: CountryName, CountryCode, Capital } = country;
+const Cloth = ({ cloth }) => {
+  const { Cloth: Cloth, ClothCost, Brand } = cloth;
   return (
-    <div className="Country">
-      <h1>{CountryName}</h1>
+    <div className="Cloth">
+      <h1>{Cloth}</h1>
       <p>
-        The Cloth is {CountryName} that has a price of{" "}
-        <code>{CountryCode}</code>, Its brand is {Capital}.
+        The Cloth is {Cloth} that has a price of <code>{ClothCost}</code>, Its
+        brand is {Brand}.
       </p>
     </div>
   );
 };
 
-const LeftSideBar = ({ Countries, match }) => {
+const LeftSideBar = ({ Cloths, match }) => {
   return (
     <div className="list-group mt-2">
-      {Countries.map((country, key) => (
+      {Cloths.map((cloth, key) => (
         <Link
-          to={country.CountryCode}
+          to={cloth.ClothCost}
           key={key}
           className={
             "list-group-item list-group-item-action" +
-            (match.params.CountryID === country.CountryCode ? " active" : "")
+            (match.params.ClothID === cloth.ClothCost ? " active" : "")
           }
         >
-          {country.Country}
+          {cloth.Cloth}
         </Link>
       ))}
     </div>

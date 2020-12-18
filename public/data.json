@@ -1,27 +1,27 @@
 [
   {
-    "CountryCode": "$99",
-    "Country": "T Shirt",
-    "Capital": "U.S. Polo Assn"
+    "ClothCost": "$99",
+    "Cloth": "T Shirt",
+    "Brand": "U.S. Polo Assn"
   },
   {
-    "CountryCode": "$249",
-    "Country": "Formal Shirt",
-    "Capital": "Peter England"
+    "ClothCost": "$249",
+    "Cloth": "Formal Shirt",
+    "Brand": "Peter England"
   },
   {
-    "CountryCode": "$299",
-    "Country": "Shweater",
-    "Capital": "Wrangler"
+    "ClothCost": "$299",
+    "Cloth": "Shweater",
+    "Brand": "Wrangler"
   },
   {
-    "CountryCode": "$149",
-    "Country": "Tracksuits",
-    "Capital": "ADIDAS"
+    "ClothCost": "$149",
+    "Cloth": "Tracksuits",
+    "Brand": "ADIDAS"
   },
   {
-    "CountryCode": "$499",
-    "Country": "Jacket",
-    "Capital": "Puma"
+    "ClothCost": "$499",
+    "Cloth": "Jacket",
+    "Brand": "Puma"
   }
 ]
