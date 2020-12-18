@@ -1,0 +1,27 @@
+[
+  {
+    "CountryCode": "$99",
+    "Country": "T Shirt",
+    "Capital": "U.S. Polo Assn"
+  },
+  {
+    "CountryCode": "$249",
+    "Country": "Formal Shirt",
+    "Capital": "Peter England"
+  },
+  {
+    "CountryCode": "$299",
+    "Country": "Shweater",
+    "Capital": "Wrangler"
+  },
+  {
+    "CountryCode": "$149",
+    "Country": "Tracksuits",
+    "Capital": "ADIDAS"
+  },
+  {
+    "CountryCode": "$499",
+    "Country": "Jacket",
+    "Capital": "Puma"
+  }
+]
